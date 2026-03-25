@@ -403,6 +403,15 @@ After the user approves the carousel preview, export each slide as an individual
 
 3. **Keep the 420px layout width** — use Playwright's `device_scale_factor` to scale up to 1080px output WITHOUT changing the layout viewport.
 
+### Install Playwright (only if needed)
+
+Before running the export script, check and install only if missing:
+
+```bash
+python3 -c "import playwright" 2>/dev/null || pip3 install playwright
+python3 -c "from playwright.sync_api import sync_playwright; sync_playwright().__enter__().chromium" 2>/dev/null || python3 -m playwright install chromium
+```
+
 ### Export Script
 
 ```python
